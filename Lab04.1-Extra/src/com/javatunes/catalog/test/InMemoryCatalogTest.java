@@ -28,7 +28,7 @@ class InMemoryCatalogTest {
         // testFindByKeyword();
         // testFindByCategory();
         // testSize();
-        // testGetAll();
+        testGetAll();
 
         // testGenreCount();
     }
@@ -61,6 +61,10 @@ class InMemoryCatalogTest {
     }
 
     private static void testGetAll() {
+        InMemoryCatalog catalog = new InMemoryCatalog();
+
+        Collection<MusicItem> allItems = catalog.getAll();
+        allItems.clear();  // NO, throws UnsupportedOperationException
     }
 
     // helper method to dump a Collection<MusicItem> "vertically"
