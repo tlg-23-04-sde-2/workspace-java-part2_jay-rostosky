@@ -8,15 +8,14 @@
  */
 package com.javatunes.product;
 
-public class MusicItem
-extends Product {
-  
-  public MusicItem(String code) {
-    super(code);
-  }
-  
-  @Override
-  public Double getPrice() {
-    return 10.0;
-  }
+public class MusicItem extends Product {
+
+    public MusicItem(String code) {
+        super(code);
+    }
+
+    @Override
+    public Double getPrice() {
+        return 10.0;
+    }
 }
