@@ -117,8 +117,9 @@ public class InMemoryCatalog implements Catalog {
 
     /**
      * TASK: find all "rock" items whose price is less than or equal to the specified price.
+     * NOTE: by "rock" we mean ROCK and CLASSIC_ROCK
      */
-    public Collection<MusicItem> getItemsAtSpecifiedPrice(double maxPrice) {
+    public Collection<MusicItem> getRockItemsAtSpecifiedPrice(double maxPrice) {  // 14.0
         Collection<MusicItem> result = new ArrayList<>();
 
         return result;
@@ -154,24 +155,34 @@ public class InMemoryCatalog implements Catalog {
      */
 
 
+
     /**
      * TASK: are all items priced at least $10?
      * This is a yes/no answer.
      */
-
+    public boolean allItemsAtLeast10() {
+        return true;
+    }
 
 
     /**
      * TASK: do we sell any items with the specified genre (MusicCategory)?
      * Another yes/no answer.
      */
-
+    public boolean itemsAvailableWithCategory(MusicCategory category) {
+        return true;
+    }
 
 
     /**
      * TASK: find the titles of all "pop" items, sorted by natural order.
      * Just the titles!
      */
+    public List<String> allPopTitles() {
+        List<String> result = new ArrayList<>();
+
+        return result;
+    }
 
 
     /**
