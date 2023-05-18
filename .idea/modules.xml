@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Demo_addAll-extends-E/Demo_addAll-extends-E.iml" filepath="$PROJECT_DIR$/Demo_addAll-extends-E/Demo_addAll-extends-E.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo_sort-super-E/Demo_sort-super-E.iml" filepath="$PROJECT_DIR$/Demo_sort-super-E/Demo_sort-super-E.iml" />
       <module fileurl="file://$PROJECT_DIR$/DuckRace/DuckRace.iml" filepath="$PROJECT_DIR$/DuckRace/DuckRace.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab01.2/Lab01.2.iml" filepath="$PROJECT_DIR$/Lab01.2/Lab01.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab03.1/Lab03.1.iml" filepath="$PROJECT_DIR$/Lab03.1/Lab03.1.iml" />
@@ -10,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/Lab04.1/Lab04.1.iml" filepath="$PROJECT_DIR$/Lab04.1/Lab04.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab04.1-Extra/Lab04.1-Extra.iml" filepath="$PROJECT_DIR$/Lab04.1-Extra/Lab04.1-Extra.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab04.2/Lab04.2.iml" filepath="$PROJECT_DIR$/Lab04.2/Lab04.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab05.1/Lab05.1.iml" filepath="$PROJECT_DIR$/Lab05.1/Lab05.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/MiniLab04.1/MiniLab04.1.iml" filepath="$PROJECT_DIR$/MiniLab04.1/MiniLab04.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Scratch/Scratch.iml" filepath="$PROJECT_DIR$/Scratch/Scratch.iml" />
     </modules>
