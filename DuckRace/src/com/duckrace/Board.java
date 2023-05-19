@@ -3,6 +3,7 @@ package com.duckrace;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,9 +46,41 @@ class Board {
     private final Map<Integer,String> studentIdMap = loadStudentIdMap();
     private final Map<Integer,DuckRacer> racerMap  = new TreeMap<>();
 
-    // FOR TESTING PURPOSES
-    void dumpStudentIdMap() {
-        System.out.println(studentIdMap);
+    /*
+     * Updates the board (racerMap) by making a DuckRacer "win."
+     * This could mean fetching an existing DuckRacer from racerMap,
+     * or we might need to create a new DuckRacer and put in the map.
+     * Either way, we need to make it "win."
+     */
+    public void update(int id, Reward reward) {
+        DuckRacer racer = null;
+
+        if (racerMap.containsKey(id)) {  // id exists in racerMap, so get DuckRacer next to it
+            racer = racerMap.get(id);
+        }
+        else {                           // id not present, create new DuckRacer, put it in map
+            racer = new DuckRacer(id, studentIdMap.get(id));  // id, name
+            racerMap.put(id, racer);     // easy to forget this step
+        }
+        racer.win(reward);
+    }
+
+    // show the DuckRacers (only), i.e., the right side of the map
+    // TODO: render this data "pretty," for display to the end user
+    // See Java Part 1 Session 5 Formatted Output
+    public void show() {
+        Collection<DuckRacer> racers = racerMap.values();
+
+        System.out.println("Duck Race Results");
+        System.out.println("=================\n");
+
+        System.out.println("id    name     wins  rewards");
+        System.out.println("--    ----     ----  -------");
+
+        for (DuckRacer racer : racers) {
+            System.out.printf("%s   %s    %s   %s\n",
+                    racer.getId(), racer.getName(), racer.getWins(), racer.getRewards());
+        }
     }
 
     private Map<Integer,String> loadStudentIdMap() {
