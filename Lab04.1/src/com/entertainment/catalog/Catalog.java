@@ -46,11 +46,13 @@ public class Catalog {
      * for that brand.
      * A no-brands-passed result should be an empty map (not null).
      */
-    public static Map<String,Collection<Television>> findByBrands(String... brands) {
+    public static Map<String,Collection<Television>> findByBrands(String... brands) {  // Sony, RCA
         Map<String,Collection<Television>> result = new HashMap<>();
 
-        // TODO - see the "TIP" in Jay's classroom whiteboard
-
+        for (String brand : brands) {
+            Collection<Television> matches = findByBrand(brand);
+            result.put(brand, matches);
+        }
         return result;
     }
 
