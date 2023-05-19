@@ -9,5 +9,5 @@
 package com.javatunes.billing;
 
 public interface TaxCalculator {
-  public double taxAmount(double taxable);
+    public double taxAmount(double taxable);
 }
