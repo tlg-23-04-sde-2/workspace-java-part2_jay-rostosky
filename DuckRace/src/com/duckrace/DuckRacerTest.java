@@ -26,7 +26,7 @@ class DuckRacerTest {
         // make it "win" again, and notice how our 'rewardsList' reflects that new Reward
         racer10.win(Reward.PRIZES);
 
-        // the rewards List will reflect this new Reward
+        // 'rewardsList' will reflect this new Reward
         System.out.println(rewardsList);
     }
 }
