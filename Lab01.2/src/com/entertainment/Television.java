@@ -76,14 +76,15 @@ public class Television implements Comparable<Television> {
     public boolean equals(Object obj) {
         boolean result = false;
 
-        // only proceed if 'obj' is a reference to another Television object
-        if (obj instanceof Television) {
-            // downcast 'obj' to more specific type Television, to call Television methods
+        // 'this' (me) and 'obj' refer to the same physical object in memory!
+        if (this == obj) {
+            result = true;
+        }
+        // 'obj' is not-null and my Class object is the same as its Class object
+        else if (obj != null && (this.getClass() == obj.getClass())) {
             Television other = (Television) obj;
-
-            // do the checks: business equality is defined by brand and volume
-            result = Objects.equals(this.getBrand(), other.getBrand()) &&  // null-safe check
-                     this.getVolume() == other.getVolume();       // primitives can't be null
+            result = Objects.equals(this.getBrand(), other.getBrand()) &&   // null-safe
+                     this.getVolume() == other.getVolume();  // primitives can't be null
         }
         return result;
     }
