@@ -71,16 +71,22 @@ class Board {
     public void show() {
         Collection<DuckRacer> racers = racerMap.values();
 
-        System.out.println("Duck Race Results");
-        System.out.println("=================\n");
-
-        System.out.println("id    name     wins  rewards");
-        System.out.println("--    ----     ----  -------");
+        StringBuilder display = new StringBuilder();
+        display.append("Duck Race Results\n");
+        display.append("=================\n");
+        display.append("\n");
+        display.append("id    name      wins    rewards\n");
+        display.append("--    ----      ----    -------\n");
 
         for (DuckRacer racer : racers) {
-            System.out.printf("%s   %s    %s   %s\n",
-                    racer.getId(), racer.getName(), racer.getWins(), racer.getRewards());
+            String rewardsString = racer.getRewards().toString();
+            String rewards = rewardsString.substring(1, rewardsString.length() - 1);
+
+            String row = String.format("%2d    %-8s %4d     %s\n",
+                    racer.getId(), racer.getName(), racer.getWins(), rewards);
+            display.append(row);
         }
+        System.out.println(display);
     }
 
     private Map<Integer,String> loadStudentIdMap() {
