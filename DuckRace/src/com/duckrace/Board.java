@@ -42,7 +42,7 @@ import java.util.TreeMap;
  *   17       17    Dom        1    DEBIT_CARD
  */
 
-class Board {
+public class Board {
     private final Map<Integer,String> studentIdMap = loadStudentIdMap();
     private final Map<Integer,DuckRacer> racerMap  = new TreeMap<>();
 
@@ -69,24 +69,31 @@ class Board {
     // TODO: render this data "pretty," for display to the end user
     // See Java Part 1 Session 5 Formatted Output
     public void show() {
-        Collection<DuckRacer> racers = racerMap.values();
-
-        StringBuilder display = new StringBuilder();
-        display.append("Duck Race Results\n");
-        display.append("=================\n");
-        display.append("\n");
-        display.append("id    name      wins    rewards\n");
-        display.append("--    ----      ----    -------\n");
-
-        for (DuckRacer racer : racers) {
-            String rewardsString = racer.getRewards().toString();
-            String rewards = rewardsString.substring(1, rewardsString.length() - 1);
-
-            String row = String.format("%2d    %-8s %4d     %s\n",
-                    racer.getId(), racer.getName(), racer.getWins(), rewards);
-            display.append(row);
+        // if racerMap is empty, print "no results to show," otherwise, show the data
+        if (racerMap.isEmpty()) {
+            System.out.println("\nThere are currently no results to show.\n");
         }
-        System.out.println(display);
+        else {
+            Collection<DuckRacer> racers = racerMap.values();
+
+            StringBuilder display = new StringBuilder();
+            display.append("\nDuck Race Results\n");
+            display.append("=================\n");
+            display.append("\n");
+            display.append("id    name      wins    rewards\n");
+            display.append("--    ----      ----    -------\n");
+
+            for (DuckRacer racer : racers) {
+                String rewardsString = racer.getRewards().toString();
+                String rewards = rewardsString.substring(1, rewardsString.length() - 1);
+
+                String row = String.format("%2s    %-8s %4s     %s\n",
+                        racer.getId(), racer.getName(), racer.getWins(), rewards);
+                display.append(row);
+            }
+            display.append("\n");
+            System.out.println(display);
+        }
     }
 
     private Map<Integer,String> loadStudentIdMap() {
