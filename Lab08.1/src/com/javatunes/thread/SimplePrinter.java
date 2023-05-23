@@ -9,10 +9,10 @@
 package com.javatunes.thread;
 
 public class SimplePrinter
-implements Runnable {
+        implements Runnable {
 
-  @Override
-  public void run() {
-    System.out.println("SimplePrinter.run");
-  }
+    @Override
+    public void run() {
+        System.out.println("SimplePrinter.run");
+    }
 }
