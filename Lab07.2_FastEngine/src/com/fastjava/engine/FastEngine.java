@@ -12,7 +12,7 @@ import java.util.Collections;
  * configured by their use of our @Fast annotation.
  */
 public class FastEngine {
-    private Collection<Class<?>> classes = new ArrayList<>();
+    private final Collection<Class<?>> classes = new ArrayList<>();
 
     public FastEngine(Class<?>... classes) {
         Collections.addAll(this.classes, classes);
