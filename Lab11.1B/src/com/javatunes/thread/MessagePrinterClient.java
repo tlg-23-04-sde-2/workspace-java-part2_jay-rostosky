@@ -1,24 +1,26 @@
-/*
- * This code is sample code, provided AS-IS, and we make NO
- * warranties as to its correctness or suitability for any purpose.
- *
- * We hope that it's useful to you.  Enjoy.
- * Copyright LearningPatterns Inc.
- */
 package com.javatunes.thread;
 
 public class MessagePrinterClient {
 
-  public static void main(String[] args) {
-    // DONE: create two instances of your thread subclass and start them up
-    MessagePrinter printer1 = new MessagePrinter("Roses are red");  // take the default interval
-    MessagePrinter printer2 = new MessagePrinter("Violets are blue", 1375);
-    
-    printer1.start();
-    printer2.start();
-    
-    // just for demonstration purposes - this shows why you don't call run() directly
-    // printer1.run();
-    // printer2.run();
-  }
+    public static void main(String[] args) {
+        // 30 secs total
+        Runnable printer1 = new MessagePrinter("roses are red", 10, 3000);
+        Thread thd1 = new Thread(printer1, "message-printer-1");
+        thd1.start();
+
+        // 20 secs total
+        Runnable printer2 = new MessagePrinter("violets are blue", 100, 200);
+        Thread thd2 = new Thread(printer2, "message-printer-2");
+        thd2.start();
+
+        // 10 times (default), 1 second each (default) = 10 secs
+        Runnable printer3 = new MessagePrinter("sugar is sweet");
+        Thread thd3 = new Thread(printer3, "message-printer-3");
+        thd3.start();
+
+        // 32 secs
+        Runnable printer4 = new MessagePrinter("actually, sugar is TOXIC", 16, 2000);
+        Thread thd4 = new Thread(printer4, "message-printer-4");
+        thd4.start();
+    }
 }
